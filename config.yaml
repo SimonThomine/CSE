@@ -1,0 +1,17 @@
+data_path: "../datasets/MVTEC"
+backbone: efficientnet_b3 # densenet201 # #efficientnet_b0 wide_resnet50_2 resnet18 #tiny_vit_21m_224 # ! GOAT efficientnet_b0 (b1,b2 etc ... ?)
+embed_input_dim: [136, 384] #[112, 320]b0b1 #[136, 384]b3 #[176, 512]b5 # #136 #
+embed_dim: 64
+out_indice: [3, 4] #[3][3, 4] # Attention à la correspondance avec le fichier trainDistillation  , 3
+obj: grid
+phase: train #train
+vis: False
+save_path: "./results"
+visu_path: "./results/visu"
+reducedFactor: 1
+TrainingData:
+  epochs: 50
+  batch_size: 8 # was 8
+  lr: 0.0004 #0.0004 maximum
+  img_size: 256
+  crop_size: 224 # Attention à ça ! (C'est pour être sur un pied d'égalité avec les autres modèles)
